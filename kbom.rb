@@ -5,21 +5,21 @@
 class Kbom < Formula
   desc "The Kubernetes Bill of Materials (KBOM) standard provides insight into container orchestration tools widely used across the industry."
   homepage "https://github.com/rad-security/kbom"
-  version "0.3.4"
+  version "0.3.5"
   license "Apache 2"
 
   on_macos do
     on_intel do
-      url "https://github.com/rad-security/kbom/releases/download/v0.3.4/kbom_0.3.4_darwin_amd64.tar.gz"
-      sha256 "bcd1ed4e492633ad08afc6241b96b046870d98dca6aeab40ed0a072a63bfecd6"
+      url "https://github.com/rad-security/kbom/releases/download/v0.3.5/kbom_0.3.5_darwin_amd64.tar.gz"
+      sha256 "ea3c5918a2905933e3e6631afdb3cc8a90ee49143223e84ec840418dbfde549b"
 
       def install
         bin.install "kbom"
       end
     end
     on_arm do
-      url "https://github.com/rad-security/kbom/releases/download/v0.3.4/kbom_0.3.4_darwin_arm64.tar.gz"
-      sha256 "d257f30b5d2da0a96cec48ad2d7c9a5bb30b6a0fbb94dbeb50e709109824692c"
+      url "https://github.com/rad-security/kbom/releases/download/v0.3.5/kbom_0.3.5_darwin_arm64.tar.gz"
+      sha256 "72f8043b90c59446b20201ff12306a77a6b44195720e582049542a80f2661436"
 
       def install
         bin.install "kbom"
@@ -30,8 +30,8 @@ class Kbom < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/rad-security/kbom/releases/download/v0.3.4/kbom_0.3.4_linux_amd64.tar.gz"
-        sha256 "acfdb3fa82e977de60a15141b2e9f54f47c6eb0c05d6a2276a960a81e2c85727"
+        url "https://github.com/rad-security/kbom/releases/download/v0.3.5/kbom_0.3.5_linux_amd64.tar.gz"
+        sha256 "41cba7cd4b037ea83c2cd75e8c6c97795886041b464dd7d35277f87b5cb6ffb1"
 
         def install
           bin.install "kbom"
@@ -40,8 +40,8 @@ class Kbom < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/rad-security/kbom/releases/download/v0.3.4/kbom_0.3.4_linux_arm64.tar.gz"
-        sha256 "84fb5439ed06575ba7e0c97b89f298223897bc926c254b87e4c766b79e9eb41b"
+        url "https://github.com/rad-security/kbom/releases/download/v0.3.5/kbom_0.3.5_linux_arm64.tar.gz"
+        sha256 "6c63c0709af588dd36ae0710dc9bb9f13aa81cfb89400e55200cf35ffb0158f1"
 
         def install
           bin.install "kbom"

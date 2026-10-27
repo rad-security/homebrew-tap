@@ -5,47 +5,41 @@
 class Kbom < Formula
   desc "The Kubernetes Bill of Materials (KBOM) standard provides insight into container orchestration tools widely used across the industry."
   homepage "https://github.com/rad-security/kbom"
-  version "0.4.0"
+  version "0.4.1"
   license "Apache 2"
 
   on_macos do
-    on_intel do
-      url "https://github.com/rad-security/kbom/releases/download/v0.4.0/kbom_0.4.0_darwin_amd64.tar.gz"
-      sha256 "e320e8c97c660ba95c4c378f8245e8a950a8a8af795bf53a07001fd82567b4f0"
+    if Hardware::CPU.intel?
+      url "https://github.com/rad-security/kbom/releases/download/v0.4.1/kbom_0.4.1_darwin_amd64.tar.gz"
+      sha256 "a5380241d0b95b0cc0f5d3e15f3174686f16563de6912a52101cfd7c32aaa8a2"
 
-      def install
+      define_method(:install) do
         bin.install "kbom"
       end
     end
-    on_arm do
-      url "https://github.com/rad-security/kbom/releases/download/v0.4.0/kbom_0.4.0_darwin_arm64.tar.gz"
-      sha256 "9009d2cd93addd3fbf25f2a6795aa7cf72c71b0d1b8dea72b12f8697cba0ae19"
+    if Hardware::CPU.arm?
+      url "https://github.com/rad-security/kbom/releases/download/v0.4.1/kbom_0.4.1_darwin_arm64.tar.gz"
+      sha256 "13d4456f8ebb785c195dced281ee6e455c27d44d98263f2bdf30525f9a1ed8a0"
 
-      def install
+      define_method(:install) do
         bin.install "kbom"
       end
     end
   end
 
   on_linux do
-    on_intel do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/rad-security/kbom/releases/download/v0.4.0/kbom_0.4.0_linux_amd64.tar.gz"
-        sha256 "119418bdb0a9f159263b80de416e90bec1ee39570e3f4df34eff363a33439305"
-
-        def install
-          bin.install "kbom"
-        end
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/rad-security/kbom/releases/download/v0.4.1/kbom_0.4.1_linux_amd64.tar.gz"
+      sha256 "358c1c4e7b2be3dc02d6af9bc201d57abca361e3cb881ef12b1554970fa1c33f"
+      define_method(:install) do
+        bin.install "kbom"
       end
     end
-    on_arm do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/rad-security/kbom/releases/download/v0.4.0/kbom_0.4.0_linux_arm64.tar.gz"
-        sha256 "38ba4cb69a0d240daf4e89f551a48bf92d6c42b875cb2a3539978a4aba43730b"
-
-        def install
-          bin.install "kbom"
-        end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/rad-security/kbom/releases/download/v0.4.1/kbom_0.4.1_linux_arm64.tar.gz"
+      sha256 "846c4a1cac7de29d337ac0d604099e922271988547ff2c02b6cea3376aa50f21"
+      define_method(:install) do
+        bin.install "kbom"
       end
     end
   end
